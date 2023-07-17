@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Javascript</title>
+      <script>
+      
+
+      //    //성적
+
+      //    var korean = prompt("국어점수를 입력하세요 : ");
+      //    var english = prompt("영어점수를 입력하세요 : ");
+      //    var math = prompt("수학점수를 입력하세요 : ");
+
+      //   // 문자열을 숫자로 변환
+      //    korean=parseInt(korean);
+      //    english=parseInt(english);
+      //    math=parseInt(math);
+
+      //    // 총점 계산
+      //    var total = korean + english + math;
+
+      //    // 평균 계산
+      //    var avg= total / 3;
+
+      //    // 결과 출력
+      //    console.log("국어 점수: " + korean);
+      //    console.log("영어 점수: " + english);
+      //    console.log("수학 점수: " + math);
+      //    console.log("총점: " + total);
+      //    console.log("평균: " + avg);
+
+         
+         //  var korean = prompt("국어점수를 입력하세요 : ");
+         //  var english = prompt("영어점수를 입력하세요 : ");
+         //  var math = prompt("수학점수를 입력하세요 : ");
+
+         //  var total = Number(kor) + Number(math) + Number(eng);
+         //  var avg = (total  /3.0);
+
+         //  document.write("총점은 " + total + "<br>")
+         //  document.write("평균은 " + avg + "<br>")
+
+         //  document.write(eng);
+         //  document.write(typeof(eng))
+
+         
+
+         // if(avg >= 90.0) {
+         //    document.write("수")
+         // } else if(avg >= 80.0){
+         //    document.write("우")
+         // } else if(avg >= 70.0){
+         //    document.write("미")
+         // } else if(avg >= 60.0){
+         //    document.write("양")
+         // } else {document.write("가")}
+
+
+         //Switch
+         // var month = Number(prompt("달을입력하세요"))
+
+         // switch(month){
+         //    case 12: case 1: case 2: case 3:
+         //       document.write("겨울입니다")
+         //       break;
+         //    case 4: case 5: case 6:
+         //       document.write("봄입니다")
+         //       break;   
+         //    case 7: case 8: 5
+         //       document.write("여름입니다")
+         //       break;   
+         //    default : 
+         //       document.write("겨울입니다")
+         //       break;      
+
+
+         // }
+
+         // //삼항연산자
+         // var varNum1 = "1234";
+         // var varNum2 = "4321";
+         // var varResult = (varNum1 > varNum2) ? "varNum1 > varNum2" : "varNum1 <= varNum2"
+         // document.write("varResult : " + varResult);
+
+         //for
+         // var sum = 0;
+         // for(var i = 0; i<=10 ; i++){
+            
+         //    sum += i;
+         //    document.write(sum +"</br>")
+         // }
+
+         // //구구단
+         // for(var i = 1; i<10 ; i++){
+         //    for(var j= 2; j<10; j++){
+         //       document.write( i + " * " + j + " = " + i * j +"</br>") 
+         //    }
+         // }
+
+         //continu나 break를 이용하여 홀수단 만들기
+
+         // for(var i = 1; i<10 ; i++){
+         //    if(i % 2 === 0){ //짝수단일 경우, contiue를 사용하여 건너뜀
+         //       continue;
+         //    }
+         //    for(var j= 1; j<10; j++){
+         //       document.write( i + " * " + j + " = " + i * j +"</br>") 
+         //    }
+         // }
+
+         // *
+
+         // for(var i =1; i<=5 ; i++){  
+         //    for(var j= 1; j<=i; j++){
+         //       document.write( "*") 
+         //    }
+         //    document.write( "</br>") 
+         // }
+
+         // document.write("<hr>") //밑줄
+
+         // for(var i=1; i<= 5; i++){
+         //    for(var j=i; j<=5; j++){
+         //        document.write("*");
+
+         //    }
+         //    document.write("</br>");
+         // }
+
+         // document.write("<hr>") //밑줄
+         
+         // for(var i =1; i<=5 ; i++){  
+         //    for(var j=i; j<5; j++){
+         //        document.write('\u00A0');//빈칸 = "&nbsp;" // '\u00A0' = 유니코드
+         //    }
+         //    for(var k= 1; k<=i; k++){
+         //       document.write("*") 
+         //    }
+            
+         //    document.write( "</br>") 
+         // }
+
+      //    /*
+      //    배열객체 생성방법 
+      //    */
+
+      //    //크기를 지정하지 않는 배열 객체 생성
+      //    var varArr1 = new Array();
+
+      //    //크기를 지정한 배열 객체 생성
+      //    var varArr2 = new Array(5);
+
+      //    //배열 생성과 데이터 저장을 동시에
+      //    var varArr3 = new Array(123, "ABC", true, function fun(){}, {}, undefined);
+
+      //    // 배열 생성과 
+      //    var varArr4 =[123, "ABC", true, function fun(){}, {}, undefined];
+
+      //    console.log("varArr1 : " + varArr1);
+      //    console.log("varArr2 : " + varArr2);
+      //    console.log("varArr3 : " + varArr3);
+      //    console.log("varArr4 : " + varArr4);
+
+      //     //배열 길이(크기)
+      //   var varArr = new array(0,1,2,3,4,5);
+      //   console.log("varArr.length:" + varArr.length); //=6개나옴
+
+      //   var varArrTemp = new Araay(100);
+      //   console.log("varArrTemp.length:" + varArrTemp.length) 
+        
+        
+      //   varArr = ['사과', '오렌지', '포도']
+
+
+      //   for (let i = 0; i < array.length; index++) {
+      //       document.write(varArr[i]);          
+      //   }
+
+      //   //for-in 일반 for문
+      //   for(let num in varArr){
+      //       document.write(num);
+
+      //       //indexOf()
+      //       var varArrIndex = new Array(123, "ABC", "가나다", "abc", "가나다", "123");
+      //       console.log("varArrIndex.indexOf(\"가나다\") : " + varArrIndex.indexOf("가나다"));
+      //       console.log("varArrIndex.lastIndexOf(\"가나");
+      //     }
+
+      //   //join
+      //   var VarArrJoin = new Array("AB", "CD", "EF","HI");
+      //   document.write("varArrJoin : " + varArrJoin);
+        
+      //   //sort
+      //   var varArrSort = new Array("E", "B", "A", "C", "D");
+      //   document.write("varArrSortBefore : " + varArrSort);
+      //   document.write("varArrSort.reverse() : " + varArrSort.reverse());
+      //   console.log()
+
+      //   //push()
+      //   var varArrPush = new Array("ABC", "DEF");
+      //   console.log("varArrPush : " + varArrPush.shift )
+
+      //   //shift(), pop();
+       var varArrShiftPop = new Array("가", "나", "다", "라", "마");
+       console.log("varArrShiftPop.shift() : " + varArrShiftPop.shift());
+       console.log("varArrShiftPop : " + varArrShiftPop);
+      
+       console.log("varArrShiftPop.pop() : " + varArrShiftPop.pop());
+       console.log("varArrShiftPop : " + varArrShiftPop);
+      
+       varArrShiftPop.unshift("가");
+       varArrShiftPop[varArrShiftPop.length] = "마";
+       console.log("varArrShiftPopOri : " + varArrShiftPop);
+
+       //로또 생성
+       var lotto = [];//new Array(6);
+       
+       while(lotto.length < 6){
+            var num = Math.floor(Math.random() * 45) + 1;
+            if(lotto.indexOf(num) < 0){ //중복제거 -1
+               lotto.push(num);
+               }
+
+            }
+         document.write("이번수 당첨 숫자는 " + lotto.sort())
+      
+         
+
+      </script>
+   
+   </head>
+   
+   <body>
+   </body>
+
+</html>
+

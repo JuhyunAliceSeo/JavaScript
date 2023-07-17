@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Javascript</title>
+      <script>
+      
+      // function add(){
+      //    return "합니다."
+      // }
+
+      // documnet.write(add())
+
+      // function add(num1, num2){
+      //    return num1 + num2;
+      // }
+
+      // document.write(add(1,2) + "<br>")
+100
+      // //익명함수
+      // var sub = function(num1, num2){
+      //    return num1 - num2;
+      // }
+      // document.write(sub(5,4));
+
+      // //함수(핵심) == this와 argument
+      // //argument = 자바 스크립트에서 함수가 만들어 질때 생성자 처럼 두개를 넣어줌
+      // //그게 바로 argumnets 와 this
+      // function funArgs(){
+      //   for( let i = 0; i < arguments.length; i++ ){
+      //    document.write("내부" + arguments[i] + "<br>")
+      //   }
+      //    //9return arguments;
+      // }
+
+      // var fun = funArgs(1,2,3,4,5,6,7);
+
+      // for(const num in fun){
+      //    document.write(fun[num] + "<br>");
+      // }
+
+      // document.write(fun + "<br>")
+      // document.write("fun" + fun.length + "<br>")
+
+      //명시(선언)적 함수 생성
+
+      //성적표
+      // var kor = prompt("국어점수를 입력하세요 : ");
+      // var eng = prompt("영어점수를 입력하세요 : ");
+      // var math = prompt("수학점수를 입력하세요 : ");
+
+      // kor = parseInt(kor);
+      // eng = parseInt(eng);
+      // math = parseInt(math);
+
+      // function getAvg() {
+      //   return (kor + eng + math) / 3;
+      // }
+
+      // function getGrade() {
+      //    var avg = getAvg();
+
+      //   if (avg >= 90.0) {
+      //    return "수";
+      //    } else if (avg >= 80.0) {
+      //    return "우";
+      //    } else if (avg >= 70.0) {
+      //    return "미";
+      //    } else if (avg >= 60.0) {
+      //    return "양";
+      //    } else {
+      //    return "가";
+      //    }
+      // }     
+
+      //    document.write("평균: " + getAvg() + "<br>");
+      //    document.write("성적: " + getGrade() + "<br>");
+
+         //선생님
+
+         // var kor,eng,math;
+
+         // function getAvg(kor,eng,math){
+         //    return (Number(kor) + Number(eng) + Number(math)) / 3.0;
+         // }
+
+         // function getGrade(avg){
+         //    var grade = "가";
+    
+         //    if(avg >= 90){
+         //    grade = "수";
+         //    }else if(avg >= 80){
+         //    grade = "우";
+         //    }else{
+         //    grade = "가";
+         //    }          
+    
+         //  return grade;
+         // }
+
+         // kor = prompt("국어");
+         // eng = prompt("영어");
+         // math = prompt("수학");
+
+         // document.write("평균" + getAvg(kor,eng,math) + "<br>");
+         // document.write("학점" + getGrade(getAvg(kor,eng,math)) + "<br>");
+
+         // var arrSub = ["국어","영어","수학"];
+
+         // function getAvg(arrSubs){
+         // var sum = 0;
+    
+         // for (var i in arrSubs) {
+         //    sum = sum + Number(arrSubs[i]);
+         //    }
+         //  return sum / arrSubs.length;
+         // }
+
+         // function getGrade(avg){
+         // var grade = "가";
+    
+         // if(avg >= 90){
+         //    grade = "수";
+         // }else if(avg >= 80){
+         //   grade = "우";
+         // }else{
+         //   grade = "가";
+         // }          
+    
+         //  return grade;
+         // }
+
+         // for (var i in object) {
+         // arrSub[i] = prompt(arrSub[i])
+         // }
+
+
+         // document.write("평균" + getAvg(arrSub) + "<br>");
+         // document.write("학점" + getGrade(getAvg(arrSub)) + "<br>");
+
+
+         //로또
+
+         // var lotto = [];
+
+         // while (lotto.length < 6) {
+         //    var num = Math.floor(Math.random() * 45) + 1;
+         //    if (lotto.indexOf(num) === -1) {
+         //       lotto.push(num);
+         //    }
+         // }
+
+         // lotto.sort();
+
+         // document.write("이번 당첨숫자는 " + lotto.join(", ") + "<br>");
+
+         // // function funName(){
+         // //    return function(x) {
+         // //       for(var i=1; i<10; i++){
+         // //          console.log(x + " * " + i + " = " + (i*j))
+         // //       }
+         // //    }
+         // // }
+
+         // //함수를 리턴
+
+         //  function funName() {
+         //    return function(dan) {
+         //       for (var i = 1; i < 10; i++) {
+         //          document.write(i * dan + "<br>");
+         //       }
+         //    };
+         // }
+
+         // var reFun = funName();
+
+         //    function funName() {
+         //       return function(dan) {
+         //          for (var i = 1; i < 10; i++) {
+         //             document.write(i * dan + "<br>");
+         //          }
+         //       };
+         //    }
+
+         // var reFun = funName();
+         // reFun(4);
+
+         // //클로저
+         // var varName = ":: 요청한" + x + "에 대한 구구단::";
+
+         // return function(){
+         //    console.log(varName);
+         //    for(var i = 1; i< 10; i++){
+         //       console.log(x+" * " + i + " = " + (x * i) )
+         //    }
+         // }
+
+         //    // 내부 함수 : 함수 안의 또다른 함수
+         //    function outFun(width, height) {
+
+         //       console.log("triangle : " + triangle());
+         //       console.log("quadrangle : " + quadrangle());
+
+         //    // 삼각형 면적 계산
+         //       function triangle() {
+         //        return (width * height) / 2;
+         //       }
+
+         //    // 사각형 면적 계산
+         //       function quadrangle(){
+         //        return width * height;
+         //       }     
+         //    }        
+         //    outFun(3, 5);
+
+         /*
+         콜백함수
+         */
+
+         function add(x,y) {
+            return x + y;
+         }
+
+         function sub(x,y) { 
+            return x - y;
+         }
+
+         function mul(x,y) { 
+            return x * y;
+         }
+
+         function printResult(x,y,callback){
+            var result = callback(x,y);
+            document.write(result + "<br>");
+         }
+
+         printResult(2,3,add);
+         printResult(2,3,sub);
+         printResult(2,3,mul);
+
+         var fun = add;
+
+         document.write(fun(3,5) + "<br>");
+
+         document.write(add(10,20));
+
+
+      </script>
+   
+   </head>
+   
+   <body>
+   </body>
+
+</html>
+
