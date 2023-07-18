@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Javascript</title>
+      <script>
+      //window.alert("내장함수");
+
+      //시간관련 함수
+   
+      // var timeFun = function() {
+      //    alert("3초 후에 실행되고 한 번만 실행됩니다.");
+      // };
+
+      // var timeoutID = setTimeout(timeFun, 3000);
+
+      // var intervalID = setInterval(function() {
+      //    document.write("2초마다 실행됩니다." + "<br>");
+      // });
+
+      // setTimeout(function(){
+      //    document.write("2초마다 실행 실행끝" + "<br>");
+      //    clearInterval(intervalId);
+      // },10000)
+
+      //eval 함수
+      //: 문자열을 코드(소스)로 이용
+      var varEval = "console.log('eval함수!')"
+      eval(varEval)
+
+      //{}를 이용해서 키와 속성으로 생성
+
+      var ojbName = {}; //들어가는 값에 따라 데이터타입이 달라짐
+
+      document.write(typeof ojbName + "<br>");  //타입오브:데이터타입을 알려주는 함수
+
+      
+      var objCar = {
+         width: "3m", //속성들 key + value 형태
+         height : "2m", 
+         cc : "2000cc",
+         energy : 100,
+         speed: function(power){ //함수를 속성으로 넣을 때는익명함수형태로
+            return this.energy * power //자기자신 멤버 접근 시에는 this 필수
+         }
+      };
+      document.write(objCar["width"] + "<br>");
+
+      document.write(objCar.width + "<br>");
+      document.write(objCar.height + "<br>");
+      document.write(objCar.cc + "<br>");
+
+      document.write(objCar.energy + "<br>");
+      document.write(objCar.speed(100) + "<br>"); //익명함수는 파라미터값 받아야니까
+
+      objCar.width = "8m"
+      document.write(objCar["width"] + "<br>");
+
+      var print = "";
+      var print = "";
+      for (var key in objCar) {
+         // if (typeof objCar[key] == "function") continue;
+         print += key + " : " + objCar[key] + "\n"
+      }
+
+      console.log(print);
+
+      //for in을 이용한 객체에 접근
+
+      // var print = "";
+      //   for(var key in objCar){
+
+      //       //if(typeof objCar[key] == "function") continue;
+      //       print += key + " : " + objCar[key] + "\n"
+      //   }
+      //   console.log(print);
+
+      /*
+         객체에 속성 추가 및 삭제
+      */
+         
+         var objName = {            
+            name : "Lee sun sin",
+            nation : "Korea",
+            gender  : "men",
+            charater : "good"            
+         };
+         
+         var print = "";
+         for(var key in objName) {
+            print += key + " : " + objName[key] + "\n"
+         }
+         console.log(print);
+         
+         //속성 추가
+         objName.talent = "fencing";
+         print = "";
+         for(var key in objName) {
+            print += key + " : " + objName[key] + "\n"
+         }
+         console.log(print);
+         
+         //속성 삭제
+         delete(objName.talent);
+         //delete objName.talent;
+         print = "";
+         for(var key in objName) {
+            print += key + " : " + objName[key] + "\n"
+         }
+         console.log(print);
+
+         //in 키워드
+         console.log("nation" in objName); //true
+         console.log("age" in objName) //false
+
+         //with 키워드
+         with(objName){
+            console.log("name : " + name );
+            console.log("nation : " + nation );
+            console.log("gender : " + gender );
+            console.log("charater : " + charater );
+
+         }
+
+         /* 
+         객체를 생성
+          */
+
+         //1.object()생성자 사용
+
+         var person = new Object(); //person = {};
+
+         person.name = "홍길동";
+         person.age = 35;
+
+         // 2. 객체 리터럴 활용방법
+         var objPerson = {
+            name : "홍길동",
+            age : 35,
+            getAge : function(){
+               return this.age;
+            }
+         }
+
+         // 3. 생성자 함수를 이용하는 방법
+         // 함수에서도 기본적으로 this를 쓸수 있음 = 자바 스크립트에서는 함수가 객체이기 때문
+         // 함수가 만들어 질때 = > 객체로 만들기 위해서 2가지를 심어줌
+         // 그 두가지는 this 와 arguments
+         function Airplane(name, color, speed){
+
+            //argument
+            //this; Airplane{}
+
+            this.name = name;
+            this.color = color;
+            this.speed = speed;
+
+            this.fly = function(){
+               return this.speed + "fly!" + "<br>";
+            };
+
+         };
+
+         var plane1 = new Airplane("보라매" , "래드", 100);
+         document.write(plane1.fly());
+
+         var plane2 = new Airplane("보라매" , "래드", 100);
+         document.write(plane2.fly());
+
+         //var 홍길동 = new Grade(100,200,300);
+
+         function Grade(kor, eng, math){
+            var name = "홍길동";
+
+            this.getAvg = function(){
+               var avg = (kor + eng + math) / 3.0;
+               return name + "의 평균은 " + avg.toFixed(2) + "입니다." + "<br>";
+            };
+            
+            this.getGrade = function() {
+               var avg = (kor + eng + math) / 3.0;
+               var grade;
+
+               if (avg >= 90.0) {
+                  grade = "수";
+               } else if (avg >= 80.0) {
+                  grade = "우";
+               } else if (avg >= 70.0) {
+                  grade = "미";
+               } else if (avg >= 60.0) {
+                  grade = "양";
+               } else {
+                  grade = "가";
+               }
+
+                return name + "의 성적은 " + grade + " 입니다.";
+            };
+         };
+         
+         var 홍길동 = new Grade(100,70,80);
+         document.write(홍길동.getAvg());
+         document.write(홍길동.getGrade());
+
+
+      </script>
+   
+   </head>
+   
+   <body>
+   </body>
+
+</html>
+
