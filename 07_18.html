@@ -174,7 +174,7 @@
 
             this.getAvg = function(){
                var avg = (kor + eng + math) / 3.0;
-               return name + "의 평균은 " + avg.toFixed(2) + "입니다." + "<br>";
+               return name + "의 평균은 " + avg.toFixed(2) + "입니다." + "<br>"; //소수점 2자리
             };
             
             this.getGrade = function() {
@@ -200,6 +200,32 @@
          var 홍길동 = new Grade(100,70,80);
          document.write(홍길동.getAvg());
          document.write(홍길동.getGrade());
+
+         function Circle(radi){
+            this.getArea =function(){
+               return radi * radi * Math.PI;
+            }
+
+         }
+         var circle = new Circle(10);
+         document.write(circle.getArea()); //반지름 10 넓이는 314.1516 입니다.
+
+         function printNumbers() {
+           var count = 1;
+
+           var intervalID = setInterval(function() {
+               console.log(count);
+
+               if (count === 10) {
+                clearInterval(intervalID);
+                console.log("프로그램 완료");
+               }
+
+             count++;
+            }, 1000);
+         }
+
+         printNumbers();
 
 
       </script>

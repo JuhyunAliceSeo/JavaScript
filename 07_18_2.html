@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Javascript</title>
+
+      <!--JAVASCRIPT-->
+      <script>
+        // 전체를 읽어라
+   window.onload = function(){
+      var tag = document.createElement("p");
+      var text = document.createTextNode("자바 스크립트");
+
+      tag.appendChild(text); //<p>자바 스크립트</p>
+
+      document.body.appendChild(tag);
+   }
+
+   console.log(window);
+   window.addEventListener("load", function(){
+      console.log("FIRST");
+   });
+
+   // onload: 전체를 한 후 제일 마지막에 실행 // 안에는 콜백 함수가 들어감
+   window.addEventListener("load", function(){
+      console.log("제일 마지막!")
+   });
+
+   var newWindow = window.open("http://www.google.com", "openWindow", "width=500, height=300");
+   
+   // 위치 조정
+   newWindow.moveTo(50, 50);
+   for(var i=0; i<1000; i++) {
+      newWindow.moveBy(1, 1);
+   }
+   
+   // 사이즈 조정
+   newWindow.resizeTo(500, 600);
+   for(var i=0; i<200; i++) {
+      newWindow.resizeBy(-1, -1);
+   }
+
+   /*
+   Screen 객체
+   */
+   
+   function openWin(url, width, height) {
+      console.log("screen.width: " + screen.width);
+      console.log("screen.height: " + screen.height);
+
+      // 중앙에 나오도록 하는 공식
+      var left = screen.width/2 - width/2;
+      var top = screen.height/2 - height/2;
+      var opt = "width=" + width + ", height=" + height + ", left=" + left + ", top=" + top;
+
+      open(url, "newWin", opt);
+   }
+
+   openWin("https://yahoo.com", 800, 500);
+
+   window.onload = function(){
+      location.href = "http://www.yahoo.com";
+      //location.assign("http://www.naver.com");
+      // 히스토리를 남기지 않음. 
+      //location.replace("http://www.naver.com")
+   };   
+
+      </script>
+   
+   </head>
+   
+   <body>
+   </body>
+
+</html>
+
