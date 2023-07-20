@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>시간 표시</title>
+</head>
+<body>
+  <div id="clock"></div>
+
+  <script>
+    window.onload = function(){//
+
+   //    var str = "";
+   //    for(var i=1; i<=5; i++){
+   //       str = str + "<p>안녕하세요</p>"
+   //    }
+
+   //    document.body.innerHTML = str;
+   // }
+
+
+   /*
+   displayTime
+   */
+
+//    function displayTime() { //웹 페이지의 로딩 시간과 순서에 따라 HTML 요소가 JavaScript 코드보다 먼저 해석될 수 있기 때문에 BODY에 씀
+//       var Time = new Date();
+//       var hours = Time.getHours();
+//       var minutes = Time.getMinutes();
+//       var seconds = Time.getSeconds();
+  
+//   // 24시간 형식으로 변환
+//       hours = (hours < 10 ? "0" : "") + hours;
+//       minutes = (minutes < 10 ? "0" : "") + minutes;
+//       seconds = (seconds < 10 ? "0" : "") + seconds;
+  
+//      var timeString = hours + ":" + minutes + ":" + seconds;
+//       document.getElementById("clock").innerHTML = timeString;
+//    }
+
+   // 1초마다 displayTime 함수 호출
+   //setInterval은 내장함수로 주어진 일정한 간격마다 지정된 함수를 반복적으로 실행하는 역활
+   // setInterval(displayTime, 1000);
+
+
+   // window.onload = function(){
+
+   //    function setClock(){
+   //       var date = new Date();
+   //       var hour = date.getHours();
+   //       var min = date.getMinutes();
+   //       var sec = date.getSeconds();
+
+   //       document.body.innerHTML = hour + ":" + min + ":" + sec;
+   //    }
+   //    setInterval(setClock, 1000);
+   // }
+
+   var str = "";
+            str += "<p id='jsTitle'> javascript & node.js </p>";
+            str += "<img id='logoImg', src='logo.png',";
+            str += "width='170', height='67', tempData='logoImg'>";
+            
+            document.body.innerHTML = str; //body가 있어서 <body>에 먼저 있어야함 그래서 <body>안에 없으면 window.onload = function()을 해야함
+            
+            
+            var titleNode = document.getElementById("jsTitle");//객체를 받은다음.
+            //titleNode.innerHTML = "JS & node";
+            // titleNode.parentNode.removeChild(titleNode);
+            titleNode.style.fontSize = "1.2em";
+            titleNode.style.border= "1px solid #ff0000";
+
+
+            var logoNode = document.getElementById("logoImg");
+            // logoNode.setAttribute("src", "./img/arm_mbed.png");
+            // logoNode.setAttribute("width", 297);
+            // logoNode.setAttribute("height", 124);
+            // logoNode.parentNode.removeChild(logoNode); //사라짐
+            logoNode.style.width = "170px";
+            logoNode.style.height = "67px";
+
+   }
+
+            
+
+
+  </script>
+</body>
+</html>

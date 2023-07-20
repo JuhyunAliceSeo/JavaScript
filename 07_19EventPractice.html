@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript</title>
+
+  <script> //코드정의
+    function ascii() { //함수정의 : 입력된 문자의 아스키코드 계산하여 출력하는 함수
+      const input = document.getElementById('inputbox').value;
+      //inputbox라는 요소를 찾아 해당요소의 값을 가져오고 사용자가 입력한 문자열을 inputbox변수에 저장
+
+      if (input.length !== 1) { //입력한 변수가 1개가 아니면 빈칸으로 나감
+          document.getElementById('output').textContent = '';
+          return;
+      }
+
+      const asciiCode = input.charCodeAt(0); //입력된 문자열에서 첫번째 문자열을 아스키코드르 변신
+      document.getElementById('output').textContent = asciiCode;
+
+      /*from teacher*/
+      // window.onload = function(){
+
+      //   function inputHandler(event){
+      //     console.log(event.key);  
+      //     console.log(event.keyCode);
+
+      //     document.getElementById('input_char').innerText = event.key.charCodeAt();
+      //   }
+
+      //   var input = document.getElementById("input_char");
+      //   input.addEventListner("keydown", inputHandler);
+
+
+      // }
+    }
+  </script>
+
+  <style>
+    /*INPUTBOX꾸미기*/
+    #inputbox { 
+      font-size: 3em;
+      border: 3px solid blue;
+      font-weight: bolder;
+    }
+  </style>  
+</head>
+
+<body>
+  <input type="text" id="inputbox" oninput="ascii()"> 
+  <span id="result"></span>//결과를 표시할 장소
+</body>
+</html>

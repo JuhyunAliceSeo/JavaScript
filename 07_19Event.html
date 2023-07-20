@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <TITLE>JavaScript</TITLE>
+
+  <script>
+      // function headerClick(){
+      //   document.write('꽝');
+      // }
+
+      
+      window.onload = function(){
+        var ce = document.getElementById("cEvent");
+        var divCe= document.getElementById("divEvent");
+
+        // ce.onclick = function(){  //onclick 객체 사용 
+            // document.write('꽝');
+            // ce.style.backgroundColor = "blue";
+            //callback함수
+            
+
+            var changeBlue = function(event){
+              console.log(event);
+              this.style.backgroundColor = "blue";
+
+              for(var key in event){
+                console.log(event[key])
+              }
+            }
+            
+            var changeRed = function(event){
+              console.log(event);
+              this.style.backgroundColor = "red";
+            }
+            
+
+            // ce.ondblclick = function(){
+            //   console.log(this);
+            //   ce.style.backgroundColor="red";
+            // }
+            
+            ce.addEventListener("click", changeBlue);
+            ce.addEventListener("dblclick", changeRed);
+
+
+            divCe.addEventListener("click",changeBlue);
+            divCe.addEventListener("dblclick",changeRed);
+
+            /*
+            마우스
+            */
+
+            window.onload = function(){
+            var me = document.getElementById("mouseEvent");
+            me.addEventListener("click", function(){
+               console.log("click event!!");
+            }, false);
+            
+            me.addEventListener("mouseover", function(){
+               console.log("mouseover event!!");
+            }, false);
+            
+            me.addEventListener("mouseout", function(){
+               console.log("mouseout event!!");
+            }, false);
+            
+            me.addEventListener("mousemove", function(e){
+               console.log("mousemove event!!");
+               //console.log("x : " + e.clientX + ", y : " + e.clientX);
+            }, false);
+            
+            me.addEventListener("mousedown", function(e){
+               console.log("mousedown event!!");
+            }, false);
+            
+            me.addEventListener("mouseup", function(e){
+               console.log("mouseup event!!");
+            }, false);
+            
+            me.addEventListener("dblclick", function(e){
+               console.log("dblclick event!!");
+            }, false);
+         }
+
+
+        // }
+     }
+     
+    </script>    
+             
+  </script>
+  <style>
+    #cEvent 
+    {
+      width: 200px; height: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-size: 1.2em;
+      background-color: #f00;
+      color: #fff;
+      font-weight: bolder;
+    }
+    #divEvent 
+    {
+      width: 200px; height: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-size: 1.2em;
+      background-color: greenyellow;
+      color: #fff;
+      font-weight: bolder;
+    }
+
+    /*
+    마우스
+    */
+    #mouseEvent {
+            width: 200px; height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 1.2em;
+            background-color: #f00;
+            color: #fff;
+            font-weight: bolder;
+         }
+
+
+  </style>  
+
+</head>
+
+<body>
+  <!-- <div id = "cEvent" onclick="document.write('꽝');">이벤트 클릭</div> -->
+  <!-- <div id = "cEvent" onclick="headerClick();">이벤트 클릭</div> -->
+  <div id="cEvent"> 이벤트 클릭 </div>
+  <div id="divEvent">DIV클릭</div>
+  <div id="mouseEvent">mouse event</div>
+
+</body>
+</html>

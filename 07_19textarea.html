@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>글자수 세기</h1>
+    
+    <textarea id="input" rows="10" cols="50" oninput="countCharacters()" style="border: 3px solid blue;"></textarea>
+    <div id = charCount>글자개수 : 0</div>
+
+    
+
+    <label>
+        전체 선택 <input type="checkbox" id="selectAllCheckbox" onclick="toggleCheckboxes()"> 
+      </label>
+      <br>
+      <label>
+        <input type="checkbox" class="itemCheckbox"> JAVA
+      </label>
+      <br>
+      <label>
+        <input type="checkbox" class="itemCheckbox"> SQL
+      </label>
+      <br>
+      <label>
+        <input type="checkbox" class="itemCheckbox"> ANGULAR
+      </label>
+
+    <script>
+        function countCharacters() {
+            var textarea = document.getElementById("input");
+            var charCount = textarea.value.length;
+            document.getElementById("charCount").textContent = "글자 개수: " + charCount;
+        }
+        
+        function toggleCheckboxes() {
+            var selectAllCheckbox = document.getElementById("selectAllCheckbox");
+            var itemCheckboxes = document.getElementsByClassName("itemCheckbox");
+      
+            for (var i = 0; i < itemCheckboxes.length; i++) {
+             itemCheckboxes[i].checked = selectAllCheckbox.checked;
+            }
+        }       
+
+        
+    </script>
+</body>
+</html>

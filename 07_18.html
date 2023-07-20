@@ -213,7 +213,7 @@
          function printNumbers() {
            var count = 1;
 
-           var intervalID = setInterval(function() {
+           var intervalID = setInterval(function() { //setTimeout 쓰는게 좋음(재귀함수로 한번 더 돌려야함)
                console.log(count);
 
                if (count === 10) {
