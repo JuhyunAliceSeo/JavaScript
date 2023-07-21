@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
+    <script>
+        $(document).ready(function() {
+
+            $("p").each(function(index, item) {
+                console.log(index + $(item).text());
+                console.log(index + $(this).text());
+                console.log(this);
+            });
+
+            // html() / text()
+            console.log($("#htmlMethod").html());
+            $("#htmlMethod").html("<strong>new</strong>");
+
+            console.log("============================================");
+            console.log($("#htmlMethod").html());
+            console.log($("#htmlMethod").text());
+
+            console.log("============================================");
+            console.log($("#textMethod").text());
+            $("#textMethod").text("아아아아");
+            console.log($("#textMethod").text());
+
+            // val() 사용법
+            var num = $("#input").val();
+            console.log(num);
+            $("#input").val('hello world');
+
+            // remove() //문서 객체 제거
+            // empty() //문서 객체 내부 제거
+            $("#removeMthod").remove();
+            $("#emptyMthod").empty(); 
+
+            $("#attrMethod img").attr("src", "logo.png"); // 수정: 선택자 앞에 $를 추가하여 jQuery 객체로 만듭니다.
+            console.log($("#attrMethod img").attr("src"))//속성에 넣은 값
+
+        });
+
+    </script>
+</head>
+<body>
+    <input id="input" type="text" value="1">
+    <p> Hello javascript! </p>
+    <p> Hello jQuery! </p>
+    <p> Hello node.js! </p>
+    
+    <div id="htmlMethod"> html() 메서드 </div>
+    <div id="textMethod"> text() 메서드 </div>
+    
+    <div id="addClass"> addClass() 메서드 </div>
+    <div id="removeClass" class="remCla"> removeClass() 메서드 </div>
+    
+    <div id="attrMethod">
+       <img>
+       <br>
+       <img>
+    </div>
+    
+    <div id="cssMethod"> CSS METHOD </div>
+    
+    <div id="removeMthod"> Remove Object! </div>
+    <div id="emptyMthod"> Empty Object! </div>
+</body>
+</html>

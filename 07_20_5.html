@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
+    <script>
+      $(document).ready(function(){
+
+        document.body.innerHTML = "<button class='bClick'>버튼</button>"
+
+        $(".bClick").click(function () {
+            alert("메롱");
+        });
+
+         // 두 번째 버튼의 클래스 선택자를 올바르게 수정합니다.
+         $(document).on("click", ".bClick2", function(){
+            alert("클릭2");
+        });
+
+      })
+    </script>
+</head>
+<body>
+    <button class="bClick">버튼</button>
+    <button class="bClick2">버튼2</button>
+  
+</body>
+</html>

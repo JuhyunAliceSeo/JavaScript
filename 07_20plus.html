@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () { //클릭했을때 함수안의 코드를 실행 / 버튼 클릭이벤트 처리하는 부분
+                var v1 = $("#v1").val();
+                var v2 = $("#v2").val();
+    
+                var result = Number(v1) + Number(v2); //더한값 변수 result저장
+                $("#result").val(result);
+            });
+        });
+
+    
+        $(document).ready(function () {
+            $("#quantity").change(function () {
+                var price = $("#price").val();
+                var quantity = $("#quantity").val();
+    
+                var result = Number(price) * Number(quantity);
+                $("#total").text(result);
+            });
+        });
+
+        $(document).ready(function () {
+            $("#quantity").click(function () {
+                var price = $("#price").val();
+                var quantity = $("#quantity").val();
+    
+                var result = Number(price) * Number(quantity);
+                $("#total").text(result);
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btnTotal").click(function () {
+                var totalPrice = 0;
+
+                // $("input:checkbox:checked").each(function(index,item){
+                //     total = total + Number($(item).val());
+                //     $("#totalPrice").text(totalPrice);
+                // })
+                $(".fruit:checked").each(function () {
+                    totalPrice += parseInt($(this).val());
+                });
+                $("#totalPrice").text(totalPrice);
+            });
+        });
+
+        $(document).ready(function () {
+            $("#add").click(function () { 
+                //add버튼 클릭 이벤트를 처리하는 함수. 입력한 값을 가져와서 리스트 아이템으로 만들어 ul요소에 출력
+                var inputVal = $("#words").val();//입력란의 값을 가져옵니다.
+                if (inputVal.trim() !== "") {//공백인지 확인
+                    $("#uList").append("<li>" + inputVal + "</li>");// 입력값을 리스트 아이템으로 만들어 ul 요소에 추가
+                    $("#words").val(""); //입력란의 값을 초기화하여 빈 입력란으로 만듬
+                }
+            });
+            $("#createArray").click(function () {
+                inputArray = [];
+                $("#uList li").each(function () {
+                    inputArray.push($(this).text());
+                });
+                console.log(inputArray);
+            });
+        });
+
+
+        </script>
+    </head>
+    <body>
+        <h1>1. +연산</h1>
+            <input type="number" id="v1" value="10">+
+            <input type="number" id="v2" value="20">=
+            <input type="text" id="result" value="">
+            <button id="btn">연산</button><br>
+
+            <hr>
+
+        <h1>2. 총합 구하기</h1>
+            가격<input type="text" id="price" value="2500">X
+            수량<select id="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            </select>
+            총합:<span id="total"></span>
+
+            <hr>
+
+            <h1>3. 총합 구하기2 (선택된 값만)</h1>
+          <div>
+              바나나(1000원) <input type="checkbox" name="fruit" class="fruit" value="1000"><br>
+              사과(500원) <input type="checkbox" name="fruit" class="fruit" value="500"><br>
+              배(1500원) <input type="checkbox" name="fruit" class="fruit" value="1500"><br> 
+              <button id="btnTotal">총합구하기</button><br>
+              선택한 총가격:<span id="totalPrice"></span>
+          </div>
+
+          <hr>
+
+          <input type="text" id="words">
+          <button type="button" id="add" >추가</button><br>
+          <ui id="uList"></ui>
+          <br>
+          <br>
+          <br>
+    </body>
+</html>

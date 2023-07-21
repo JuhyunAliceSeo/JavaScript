@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>디지털 시계</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.clock {
+  font-size: 2em;
+  padding: 20px;
+  border: 2px solid black;
+  background-color: #f0f0f0;
+}
+  </style> -->
+</head>
+<body>
+  <!-- <div class="clock">
+    <div id="time"></div>
+  </div>
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      
+      const timeString = `${hours}:${minutes}:${seconds}`;
+      document.getElementById("time").textContent = timeString;
+    }
+
+    setInterval(updateTime, 1000);
+  </script> -->
+
+
+
+
+  <!--setTimeout 호출-->
+  <div class="clock">
+  <div id="time"></div>
+  </div>
+  
+  <script>
+     function updateTime() {
+         var now = new Date();
+         var hours = String(now.getHours()).padStart(2, '0');//함수를 받아 반환값을 문자열로 반환 2 = 문자열의 최소 길이(8 -> 08)
+         var minutes = String(now.getMinutes()).padStart(2, '0');
+         var seconds = String(now.getSeconds()).padStart(2, '0');
+
+         var timeString = hours + ":" + minutes + ":" + seconds;
+         document.getElementById("time").textContent = timeString;
+
+         // 1초 후에 다음 프레임을 요청
+         setTimeout(updateTime, 1000);
+        }
+
+    // 첫 프레임을 요청
+    setTimeout(updateTime, 0);
+</script>
+  
+</body>
+</html>
