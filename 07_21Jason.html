@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //자바스크립트 객체를 json형태로 바꾸기
+            // var person = {
+            //     name : "홍길동",
+            //     age : 30,
+            // }
+
+            // var json = JSON.stringify(person);
+
+            // document.write(json + "<br>");
+
+            // $.ajax({
+            //     type : 'http method type',
+            //     url : 'url',
+            //     data : '서버에 전송할 데이터',
+            //     contentType : "전송할 데이터 타입",
+            //     //기본값  : "application / x-www-form-urlencoded; charset = RTF-8"
+            //     dataType :'서버로부터 수신할 데이터 타입',
+            //     //아무것도 지장허지 않으면 jQuery는 응답의 mime 유형을 기반으로 해석을 시도
+            //     error : '에러 발생시 수행할 함수',
+            //     success:'성공시 수행할 함수'
+                 
+            // })
+
+            // $.ajax({
+            //     type : "GET",
+            //     url : "http://sample",
+            //     async:false,
+            //     success : function(result){
+            //         console.log("통신성공");
+            //         console.log(result);
+
+            //         document.write(result.pageno);
+            //         document.write(result.contacts[0].name);
+            //     },
+            //     error : function(error){
+            //         console.log(error);
+            //     }
+            // });
+
+            // console.log("비동기 체크 문구")
+
+
+            $(document).ready(function() {
+                $(document).ready(function() {
+                    function populateTableWithData() {
+                    $.ajax({
+                     url: 'https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=ko', // 서버 엔드포인트 지정
+                     method: 'GET', // GET 요청을 보냄 (데이터를 가져오는 예제)
+                     dataType: 'json', // 가져온 데이터의 타입 (JSON으로 가정)
+                     success: function(data) {
+                       var tableBody = $('#dynamic-table tbody');
+                       tableBody.empty(); // 기존 행 제거
+
+                       data.forEach(function(item) {
+                       var newRow = '<tr>';
+                     newRow += '<td>' + item.column1 + '</td>';
+                      newRow += '<td>' + item.column2 + '</td>';
+                  // 추가적인 데이터가 있다면 이어서 작성
+
+                     newRow += '</tr>';
+                      tableBody.append(newRow);
+                    });
+                },
+                error: function() {
+                alert('Failed to fetch data.');
+                }
+                });
+            }
+
+            populateTableWithData();
+        });
+
+
+        });
+        
+        </script>
+    </head>
+    <body>
+        <table id="list-table" width="500" border="1">
+            <thead>
+              <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>전화번호</th>
+                <th>주소</th>
+                <th>사진</th>
+                <th>삭제</th>
+                <!-- 추가적인 테이블 열들 -->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 동적으로 추가될 테이블 행들 -->
+            </tbody>
+          </table>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Insert title here</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/board.js"></script>
+</head>
+<body>
+  <input type="text" id="word">
+  <button type="button" id="add">추가</button><br>
+  <ul id="uList"></ul>
+  <br>
+
+  <script>
+    $(document).ready(function(){
+      // 버튼 클릭 이벤트 리스너 추가
+      $("#add").on("click", function() {
+        var text = $("#word").val();
+
+        if (text == "")
+          return;
+
+        // 리스트에 단어 추가
+        var listItem = $("<li></li>").text(text);
+        var deleteButton = $("<span> X</span>").addClass("delete-button");
+
+        // 삭제 버튼을 클릭하면 해당 항목을 리스트에서 제거
+        deleteButton.on("click", function() {
+          listItem.remove();
+        });
+
+        listItem.append(deleteButton);
+        $("#uList").append(listItem);
+        $("#word").val(""); // 입력 요소 초기화
+
+        // $(document).ready(function(){
+        //     $("#add").click(function(){
+        //         var text = $("#words").val();
+
+        //             if(text == "")
+        //             return;
+
+        //         var list = $("<li></li>"); // "<li class ='클래스명'></li>" 으로 줘도댐
+        //         list.text(text); // text(text + "X");
+
+        //         // remove
+        //         var deleteBtn = $("<span class='delete-btn'> X</span>");
+        //         deleteBtn.click(function(){
+        //             list.remove();
+        //         });
+
+        //         list.append(deleteBtn);
+
+        //         $("#uList").append(list);
+        //         // remove 
+        //         $("#words").val('');
+
+        //     });
+
+        //     // 리스트로 만든 부모요소 delete
+        //     $(document).on("click", ".delete-btn", function(){
+        //         $(this).remove();
+        //     });
+        // });
+
+
+        
+      });
+    });
+  </script>
+</body>
+</html>

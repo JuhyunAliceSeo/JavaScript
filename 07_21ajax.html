@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/board.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $.ajax({
+          type: "GET",
+          url: "http://sample.bmaster.kro.kr/contacts?pageno=3&pagesize=10",
+          success: function (result) {
+            console.log(result);
+          
+
+            $("#list-table").hide();
+
+            $(result.contacts).each(function () {
+              var tr = $("#tr-copy").clone();
+
+              //찾는법 $(".dname td:nth-child(2)").text();
+              //$(".dname").find("td:eq(1)").text()
+              tr.find("td:eq(0)").text(this.no);
+              tr.find("td:eq(1)").text(this.name);
+              tr.find("td:eq(2)").text(this.tel);
+              tr.find("td:eq(3)").text(this.address);
+              tr.find("td:eq(4)").children("img").attr("src", this.photo);
+
+              $("#list-table").append(tr);
+            });
+
+            $("#list-table").find("tr:eq(1)").remove();
+
+            $("#list-table").show();
+          },
+          error: function (e) {
+            console.log(e);
+          },
+        });
+      });
+    </script>
+    <script>
+      $(document).on("click", ".del-button", function () {
+        console.log(this);
+        $(this).parent().parent().remove();
+      });
+    </script>
+  </head>
+  <body>
+    <table id="list-table" width="500" border="1">
+      <tr>
+        <td>번호</td>
+        <td>이름</td>
+        <td>전화번호</td>
+        <td>주소</td>
+        <td>사진</td>
+        <td>삭제</td>
+      </tr>
+      <tr id="tr-copy">
+        <td>1678846480504</td>
+        <td>문세홍</td>
+        <td>010-1111-9999</td>
+        <td>Seoul</td>
+        <td><img src="http://sample.bmaster.kro.kr/photos/noimage.jpg" /></td>
+        <td>
+          <input
+            id="1678846480504"
+            type="button"
+            class="del-button"
+            value="삭제"
+          />
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

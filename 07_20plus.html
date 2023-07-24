@@ -51,25 +51,26 @@
             });
         });
 
-        $(document).ready(function () {
-            $("#add").click(function () { 
-                //add버튼 클릭 이벤트를 처리하는 함수. 입력한 값을 가져와서 리스트 아이템으로 만들어 ul요소에 출력
-                var inputVal = $("#words").val();//입력란의 값을 가져옵니다.
-                if (inputVal.trim() !== "") {//공백인지 확인
-                    $("#uList").append("<li>" + inputVal + "</li>");// 입력값을 리스트 아이템으로 만들어 ul 요소에 추가
-                    $("#words").val(""); //입력란의 값을 초기화하여 빈 입력란으로 만듬
-                }
-            });
-            $("#createArray").click(function () {
-                inputArray = [];
-                $("#uList li").each(function () {
-                    inputArray.push($(this).text());
-                });
-                console.log(inputArray);
+        $(document).ready(function() {
+
+
+        var wordsList = [];
+
+        $("#add").click(function() {
+         var word = $("#words").val();
+         if (word.trim() !== '') {
+            var listItem = "<li>" + word + "</li>";
+            $("#uList").append(listItem);
+            $("#words").val('').focus();
+            console.log($("#uList").text());
+            wordsList.push(word);
+            console.log(listItem); 
+            console.log(wordsList);
+            }
             });
         });
 
-
+        
         </script>
     </head>
     <body>
